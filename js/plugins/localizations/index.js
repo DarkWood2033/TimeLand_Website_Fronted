@@ -1,6 +1,24 @@
 import Localization from "@plugin/localization";
 
 window.i18n = {
+    page: {
+        // Main
+        home: 'Главная',
+        about_us: 'О нас',
+        contact: 'Тех.Поддержка',
+
+        // Instruments
+        instruments: 'Инструменты',
+        timer: 'Обратный таймер',
+        stop_watch: 'Секундомер',
+        circle_stop_watch: 'Круговой секундомер',
+        interval_timer: 'Интервальный таймер',
+
+        // Auth
+        account: 'Аккаунт',
+        registration: 'Регистрация',
+        login: 'Авторизация'
+    },
     errors: {
         500: {
             title: 'Произошла ошибка сервера!',
@@ -10,7 +28,8 @@ window.i18n = {
             title: 'Ресурс не был найден!',
             message: 'По вашему запросу не удалось найти ресурс!'
         }
-    }
+    },
+    copyright: 'Все права защищены. Копировать запрещено.'
 };
 
 export default Localization(window.i18n);
