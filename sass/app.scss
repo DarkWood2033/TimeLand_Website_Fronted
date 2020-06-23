@@ -1,0 +1,40 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+@import "reset";
+@import "variable";
+@import "typography";
+
+// Plugins
+@import "./plugins/bootstrap/bootstrap-grid.scss";
+@import "./plugins/font-awesome/scss/font-awesome";
+
+html{
+    font-family: $font-family;
+    --primary: #007bd3;
+    --secondary: #003D66;
+    --bg-color: #ffffff;
+}
+
+html[data-theme="dark"]{
+    --primary: #007bd3;
+    --secondary: #003D66;
+    --bg-color: #262626;
+}
+
+body{
+    background-color: var(--bg-color);
+    width: 100%;
+    min-width: 300px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@each $color, $type in $types {
+    .bg_#{$type}{
+        background-color: $color;
+    }
+}

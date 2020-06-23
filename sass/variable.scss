@@ -1,0 +1,21 @@
+// Color
+$primary: #007bd3;
+$secondary: #003D66;
+$success: #2eb057;
+$error: #b92622;
+$warning: #c8b92d;
+$info: #0bb1b6;
+
+// Font
+$font-family: 'Roboto', sans-serif;
+
+// Animation
+$animation: 0.3s;
+
+// Container(size)
+$sm: 576;
+$md: 768;
+$lg: 992;
+$xl: 1200;
+
+$types: $primary 'primary', $secondary 'secondary', $success 'success', $error 'error', $warning 'warning', $info 'info';
