@@ -4,6 +4,11 @@
 @import "reset";
 @import "variable";
 @import "typography";
+@import "common";
+
+// Tags
+@import "tags/button";
+@import "tags/input";
 
 // Plugins
 @import "./plugins/bootstrap/bootstrap-grid.scss";

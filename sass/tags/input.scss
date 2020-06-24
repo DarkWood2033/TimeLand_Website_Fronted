@@ -1,0 +1,19 @@
+@mixin input_default($color_type){
+    color: $color_type;
+    border-color: $color_type;
+}
+
+input{
+    &.default {
+        background-color: rgba(0, 0, 0, 0);
+        border: 2px solid;
+        padding: 8px;
+        width: 100%;
+
+        @each $color, $type in $types {
+            &.#{$type}{
+                @include input_default($color);
+            }
+        }
+    }
+}
