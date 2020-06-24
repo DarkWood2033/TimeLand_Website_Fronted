@@ -11,7 +11,7 @@
                 ></component>
             </div>
             <div class="action my-3 text_center">
-                <button class="light secondary" @click="send">{{ btnText }}</button>
+                <button class="light secondary" @click="send">{{ btnText || $t('tags.button.send') }}</button>
             </div>
     </div>
 </template>
@@ -27,7 +27,7 @@
             },
             btnText: {
                 type: String,
-                required: true // Default
+                default: ''
             }
         },
         mixins: [CarcaseFormMixins]
