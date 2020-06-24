@@ -1,0 +1,68 @@
+@mixin button_outline($color_type){
+    border-color: $color_type;
+    color: $color_type;
+    &:hover {
+        background-color: $color_type;
+        color: white;
+    }
+}
+
+@mixin button_light($color_type){
+    background-color: $color_type;
+    &:hover {
+        -webkit-box-shadow: 0 3px 10px 1px $color_type;
+        -moz-box-shadow: 0 3px 10px 1px $color_type;
+        box-shadow: 0 3px 10px 1px $color_type;
+    }
+}
+
+@mixin button_text($color_type){
+    color: $color_type;
+    &:hover {
+        color: darken($color_type, 15%);
+    }
+}
+
+button {
+    font-family: $font-family;
+    border: none;
+    font-weight: bold;
+
+    &.outline{
+        transition: $animation;
+        padding: 8px 12px;
+        background-color: rgba(0,0,0,0);
+        transform: skewX(-5deg);
+        border: 3px solid $primary;
+
+        @each $color, $type in $types {
+            &.#{$type}{
+                @include button_outline($color);
+            }
+        }
+    }
+
+    &.light{
+        transition: $animation;
+        padding: 8px 12px;
+        transform: skewX(-5deg);
+        color: white;
+
+        @each $color, $type in $types {
+            &.#{$type}{
+                @include button_light($color);
+            }
+        }
+    }
+
+    &.text{
+        transition: $animation;
+        background-color: rgba(0,0,0,0);
+
+        @each $color, $type in $types {
+            &.#{$type}{
+                @include button_text($color);
+            }
+        }
+    }
+}

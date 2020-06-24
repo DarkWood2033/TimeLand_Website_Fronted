@@ -5,18 +5,18 @@
         </div>
 
         <div class="menu" :class="{ active: menu }">
-            <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.home') }}</router-link></div>
+            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.home') }}</router-link></div>
             <div><a href="#" @click="sub_menu = !sub_menu">{{ $t('page.instruments') }} <i class="fa fa-chevron-down"></i></a>
                 <div :class="{ active: sub_menu }" @mouseleave="sub_menu = false" class="sub_menu">
-                    <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.interval_timer') }}</router-link></div>
-                    <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.timer') }}</router-link></div>
-                    <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.stop_watch') }}</router-link></div>
-                    <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.circle_stop_watch') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.interval_timer') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.timer') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.stop_watch') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.circle_stop_watch') }}</router-link></div>
                 </div>
             </div>
-            <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.about_us') }}</router-link></div>
-            <div @click="menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.contact') }}</router-link></div>
-            <div @click="menu = false" class="account"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.account') }}</router-link></div>
+            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.about_us') }}</router-link></div>
+            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.contact') }}</router-link></div>
+            <div @click="sub_menu = menu = false" class="account"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.account') }}</router-link></div>
         </div>
 
         <div class="panel">
@@ -101,6 +101,7 @@
             }
         }
         .sub_menu{
+            z-index: 5;
             display: none;
             margin-top: 10px;
             position: absolute;
@@ -167,6 +168,7 @@
             }
 
             .menu{
+                z-index: 5;
                 display: none;
                 text-align: center;
                 top: 60px;
