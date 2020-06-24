@@ -9,18 +9,22 @@
         </div>
 
         <v-footer></v-footer>
+
+        <v-dialog></v-dialog>
     </div>
 </template>
 
 <script>
     import HeaderComponent from "./components/HeaderComponent";
     import FooterComponent from "./components/FooterComponent";
+    import DialogComponent from "./components/DialogComponent";
 
     export default {
         name: "MainLayout",
         components: {
             vHeader: HeaderComponent,
-            vFooter: FooterComponent
+            vFooter: FooterComponent,
+            vDialog: DialogComponent
         }
     }
 </script>
