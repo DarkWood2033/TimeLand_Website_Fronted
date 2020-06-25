@@ -11,6 +11,8 @@
         <v-footer></v-footer>
 
         <v-dialog></v-dialog>
+
+        <v-notification></v-notification>
     </div>
 </template>
 
@@ -18,13 +20,15 @@
     import HeaderComponent from "./components/HeaderComponent";
     import FooterComponent from "./components/FooterComponent";
     import DialogComponent from "./components/DialogComponent";
+    import NotificationComponent from "./components/NotificationComponent";
 
     export default {
         name: "MainLayout",
         components: {
             vHeader: HeaderComponent,
             vFooter: FooterComponent,
-            vDialog: DialogComponent
+            vDialog: DialogComponent,
+            vNotification: NotificationComponent
         }
     }
 </script>
