@@ -1,3 +1,4 @@
 import time from './time';
+import array from "./array";
 
-export default { time };
+export default { time, array };

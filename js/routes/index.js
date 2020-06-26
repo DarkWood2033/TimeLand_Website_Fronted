@@ -22,6 +22,16 @@ const router = new Router({
                     meta: {
                         name: 'page.home'
                     }
+                },
+
+                /* Tools */
+                {
+                    path: '/tools/stopwatch',
+                    name: 'tools.stopwatch',
+                    component: () => import("./tools/StopwatchRouter.vue"),
+                    meta: {
+                        name: 'page.stop_watch'
+                    }
                 }
             ]
         }
