@@ -10,7 +10,7 @@
                 <div :class="{ active: sub_menu }" @mouseleave="sub_menu = false" class="sub_menu">
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.interval_timer') }}</router-link></div>
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.timer') }}</router-link></div>
-                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.stop_watch') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link :to="{ name: 'tools.stopwatch' }" tag="a">{{ $t('page.stop_watch') }}</router-link></div>
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.circle_stop_watch') }}</router-link></div>
                 </div>
             </div>
