@@ -1,12 +1,11 @@
 <template>
     <div>
-        <v-default-stopwatch-view
+        <v-circle-stopwatch-view
             @fix="fixTime($event)"
             @reset="resetTimes"
-        ></v-default-stopwatch-view>
+        ></v-circle-stopwatch-view>
 
         <v-time-item-view
-            v-if="!isTimesEmpty"
             :items="times"
             :page="page"
             :number="number"
@@ -24,15 +23,15 @@
 </template>
 
 <script>
-    import PaginationComponent from "../../components/paginations/PaginationComponent";
-    import DefaultStopwatchView from "../../views/stopwatchs/DefaultStopwatchView";
+    import CircleStopwatchView from "../../views/stopwatchs/CircleStopwatchView";
     import TimeItemView from "../../views/items/TimeItemView";
+    import PaginationComponent from "../../components/paginations/PaginationComponent";
     import DefaultStopwatchMixin from "../../mixins/stopwatchs/DefaultStopwatchMixin";
     export default {
-        name: "StopwatchRouter",
+        name: "CircleStopwatchRouter",
         components: {
             vPagination: PaginationComponent,
-            vDefaultStopwatchView: DefaultStopwatchView,
+            vCircleStopwatchView: CircleStopwatchView,
             vTimeItemView: TimeItemView
         },
         mixins: [DefaultStopwatchMixin]
