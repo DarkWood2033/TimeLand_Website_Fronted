@@ -10,8 +10,8 @@ export default {
     },
     methods: {
         iteration(){
-            let thisDate = new Date();
-            let time = thisDate.getTime() - this.SW_Start_Time.getTime();
+            let thisDate = Date.now();
+            let time = thisDate - this.SW_Start_Time.getTime();
             this.SW_Time = this.$utils.time.millisecondToTime(time);
             this.SW_Out = setTimeout(this.iteration, this.interval);
         },
@@ -21,16 +21,19 @@ export default {
                 : new Date();
             this.SW_Out = setTimeout(this.iteration, this.interval);
             this.SW_Status = true;
+            if(this.afterStartSW) this.afterStartSW();
         },
         stopSW() {
             this.SW_Status = false;
             this.SW_Stop_Time = new Date();
             clearTimeout(this.SW_Out);
+            if(this.afterStopSW) this.afterStopSW();
         },
         resetSW() {
             this.stopSW();
             this.SW_Start_Time = null;
             this.SW_Time = this.default_time;
+            if(this.afterResetSW) this.afterResetSW();
         },
         getTime(){
             return this.SW_Time;

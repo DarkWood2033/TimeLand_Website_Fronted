@@ -100,15 +100,18 @@ export default class Time {
     toSecond(){
         return this._s + this._m * 60 + this._h * 3600;
     }
-
-    viewH_M_S_MS(){
-        return this.viewH() + ':' + this.viewM() + ':' + this.viewS() + '.' + this.viewMS();
+    toMillisecond(){
+        return this.toSecond() * 1000 + this._ms;
     }
-    viewMS(){
-        let ms = '' + this._ms;
-        if(1 < ms.length) {
-            return '' + ms[0] + ms[1];
+
+    viewH_M_S_MS(sign = 2){
+        return this.viewH() + ':' + this.viewM() + ':' + this.viewS() + '.' + this.viewMS(sign);
+    }
+    viewMS(sign = 2){
+        let ms = '0'.repeat(3 - (('' + this._ms).length)) + this._ms;
+        if(sign < ms.length) {
+            return ms.slice(0, sign);
         }
-        return ms + '0';
+        return ms + '0'.repeat(sign - ms.length);
     }
 };

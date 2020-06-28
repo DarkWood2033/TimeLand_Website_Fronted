@@ -32,6 +32,14 @@ const router = new Router({
                     meta: {
                         name: 'page.stop_watch'
                     }
+                },
+                {
+                    path: '/tools/circle_stopwatch',
+                    name: 'tools.circle_stopwatch',
+                    component: () => import("./tools/CircleStopwatchRouter.vue"),
+                    meta: {
+                        name: 'page.circle_stop_watch'
+                    }
                 }
             ]
         }
