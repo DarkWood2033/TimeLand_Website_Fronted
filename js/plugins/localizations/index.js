@@ -9,7 +9,7 @@ window.i18n = {
 
         // Instruments
         instruments: 'Инструменты',
-        timer: 'Обратный таймер',
+        countdown_timer: 'Обратный таймер',
         stop_watch: 'Секундомер',
         circle_stop_watch: 'Круговой секундомер',
         interval_timer: 'Интервальный таймер',
@@ -34,17 +34,31 @@ window.i18n = {
             cancel: 'Отменить',
             ok: 'Согласиться',
             send: 'Отправить',
+            off: 'Выключить',
 
             start: 'Старт',
             stop: 'Стоп',
             fix: 'Зафиксировать',
             reset: 'Сбросить',
-            next_circle: 'Следующий круг'
+            next_circle: 'Следующий круг',
+            edit: 'Редактировать',
+            select_sound: 'Выбрать звук',
+            set: 'Установить'
         }
     },
     text: {
         no_data: 'Данных нет',
         time: 'Время'
+    },
+    title: {
+        no_indicate_time: 'Время не определено',
+        edit_time: 'Редактирование времени',
+        select_sound: 'Выбрать звук',
+        time_expired: 'Время вышло'
+    },
+    message: {
+        indicate_time: 'Пожалуйста, определите время таймер!',
+        time_expired: 'Ваше указанное время истёк!'
     },
     copyright: 'Все права защищены. Копировать запрещено.'
 };

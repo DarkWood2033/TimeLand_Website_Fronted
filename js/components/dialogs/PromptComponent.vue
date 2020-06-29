@@ -1,6 +1,7 @@
 <template>
     <v-dialog :title="title" :type="type" @close="error">
         <v-dialog-form
+            class="pt-3"
             :form="form"
             :btnText="btnText"
             :data="data"

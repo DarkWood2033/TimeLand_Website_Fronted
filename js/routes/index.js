@@ -40,6 +40,14 @@ const router = new Router({
                     meta: {
                         name: 'page.circle_stop_watch'
                     }
+                },
+                {
+                    path: '/tools/countdown_timer',
+                    name: 'tools.countdown_timer',
+                    component: () => import("./tools/CountdownTimerRouter.vue"),
+                    meta: {
+                        name: 'page.countdown_timer'
+                    }
                 }
             ]
         }
