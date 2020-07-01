@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main-layout">
         <v-header></v-header>
 
         <v-title></v-title>
@@ -37,13 +37,35 @@
     }
 </script>
 
-<style lang="scss">
-    @import "@sass/variable";
+<style>
 
-    #content{
-        margin-bottom: 30px;
-        margin-top: 30px;
-        min-height: calc(100vh - 234.5px);
+    body, html{
+        height: 100%;
+    }
+
+</style>
+<style lang="scss" scoped>
+    @import "@sass/variable";
+    
+    div.main-layout{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    #content {
+        flex: 1 0 auto;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    #footer {
+        flex: 0 0 auto;
+    }
+    #title {
+        flex: 0 0 auto;
+    }
+    #header {
+        flex: 0 0 auto;
     }
 
 </style>
