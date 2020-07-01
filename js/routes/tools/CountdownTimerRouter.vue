@@ -36,7 +36,7 @@
             noIndicateTime(){
                 this.$notify.warning($t('title.no_indicate_time'), $t('message.indicate_time'), 5);
             },
-            finish(){
+            finishTimer(){
                 this.isFinish = true;
                 this.sound.play();
                 this.$notify.info($t('title.time_expired'), $t('message.time_expired'));

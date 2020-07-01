@@ -28,7 +28,7 @@
             },
             validate: {
                 type: Function,
-                default: value => Number.isInteger(value) ? value : false
+                default: value => Number.isInteger(+value) ? +value : false
             },
             min: {
                 type: Number,
@@ -91,6 +91,15 @@
             }
         },
         mounted(){
+            if(Number.isInteger(this.value)){
+                if(this.min <= this.value && this.value <= this.max){
+                    this.count = this.value;
+                }else{
+                    this.count = this.min;
+                }
+            }else{
+                this.count = this.min;
+            }
             this.viewCount = this.view(this.count);
         }
     }

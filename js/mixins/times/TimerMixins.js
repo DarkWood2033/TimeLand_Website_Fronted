@@ -18,26 +18,29 @@ export default {
                 this.noIndicateTime();
             }else{
                 this.timerStatus = true;
-                this.timerOut = setTimeout(this.interval, 0);
+                if(this.afterStartTimer) this.afterStartTimer();
+                this.timerOut = setTimeout(this.iteratorTimer, 0);
             }
         },
         stopTimer(){
             clearTimeout(this.timerOut);
             this.timerStatus = false;
+            if(this.afterStopTimer) this.afterStopTimer();
         },
         noIndicateTime(){
             throw new Error('Пожалуйста, переопределите метод "noIndicateTime" в TimerMixins.js!');
         },
-        finish(){
+        finishTimer(){
             throw new Error('Пожалуйста, переопределите метод "finish" в TimerMixins.js!');
         },
-        interval(){
+        iteratorTimer(){
             if(this.timerTime.isZero()){
                 this.stopTimer();
-                this.finish();
+                this.finishTimer();
             }else{
                 this.timerTime.subtract(1);
-                this.timerOut = setTimeout(this.interval, 1000);
+                if(this.afterIteratorTimer) this.afterIteratorTimer();
+                this.timerOut = setTimeout(this.iteratorTimer, 1000);
             }
         }
     },

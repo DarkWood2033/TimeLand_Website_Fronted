@@ -6,13 +6,13 @@ export default class Time {
         }else{
             this._ms = ms;
         }
-        if(60 < s){
+        if(59 < s){
             this._s = s % 60;
             m += Math.floor(s / 60);
         }else{
             this._s = s;
         }
-        if(60 < m){
+        if(59 < m){
             this._m = m % 60;
             h += Math.floor(m / 60);
         }else{

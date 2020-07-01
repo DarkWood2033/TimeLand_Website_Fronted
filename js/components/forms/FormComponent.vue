@@ -1,6 +1,6 @@
 <template>
     <div id="form">
-            <div><h2 class="text_center text_bold my-3">{{ label }}</h2></div>
+            <div><h2 class="text_center text_bold my-3 text_secondary">{{ label }}</h2></div>
             <div class="my-3">
                 <component
                     :is="form"
