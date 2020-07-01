@@ -4,7 +4,9 @@ export default class IteratorInterval {
     constructor(items){
         this._commonTime = 0;
         this._step = 0;
+        this._currentTime = [];
         this._items = items.map(item => {
+            this._currentTime.push(this._commonTime);
             this._commonTime += item.time;
             return new ItemInterval(item);
         });
@@ -41,6 +43,7 @@ export default class IteratorInterval {
     }
     get(){
         return {
+            commonTime: this._commonTime - this._currentTime[this.step],
             step: this.step,
             previous: this._items[this.step - 1] || null,
             current: this._items[this.step],

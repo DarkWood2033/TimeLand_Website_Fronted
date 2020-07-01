@@ -35,6 +35,8 @@ window.i18n = {
             ok: 'Согласиться',
             send: 'Отправить',
             off: 'Выключить',
+            create: 'Создать',
+            accept: 'Принять',
 
             start: 'Старт',
             stop: 'Стоп',
@@ -55,19 +57,34 @@ window.i18n = {
             confirm: 'Подверждение'
         },
         no_data: 'Данных нет',
-        time: 'Время'
+        time: 'Время',
+        time_work: 'Время работы',
+        time_rest: 'Время отдыха',
+        count_sets: 'Количетсво сетов',
+        count_cycles: 'Количество циклов',
+        rest_between_cycles: 'Отдых между циклами',
+        sets: 'Сеты',
+        cycles: 'Циклы',
+        previous: 'Предыдущий',
+        current: 'Текущий',
+        next: 'Следующий'
     },
     title: {
         no_indicate_time: 'Время не определено',
         edit_time: 'Редактирование времени',
         select_sound: 'Выбрать звук',
-        time_expired: 'Время вышло'
+        time_expired: 'Время вышло',
+        finish: 'Финиш'
     },
     message: {
         indicate_time: 'Пожалуйста, определите время таймер!',
-        time_expired: 'Ваше указанное время истёк!'
+        time_expired: 'Ваше указанное время истёк!',
+        interval_timer_expired: 'Ваш интервальный таймер завершён! '
     },
-    copyright: 'Все права защищены. Копировать запрещено.'
+    copyright: 'Все права защищены. Копировать запрещено.',
+    validation: {
+        is_no_zero: 'Не может равняться нулю!'
+    }
 };
 
 export default Localization(window.i18n);

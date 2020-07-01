@@ -8,9 +8,9 @@
             <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.home') }}</router-link></div>
             <div><a href="#" @click="sub_menu = !sub_menu">{{ $t('page.instruments') }} <i class="fa fa-chevron-down"></i></a>
                 <div :class="{ active: sub_menu }" @mouseleave="sub_menu = false" class="sub_menu">
-                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.interval_timer') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'tools.interval_timer' }">{{ $t('page.interval_timer') }}</router-link></div>
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'tools.countdown_timer' }">{{ $t('page.countdown_timer') }}</router-link></div>
-                    <div @click="sub_menu = menu = false"><router-link :to="{ name: 'tools.stopwatch' }" tag="a">{{ $t('page.stop_watch') }}</router-link></div>
+                    <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'tools.stopwatch' }">{{ $t('page.stop_watch') }}</router-link></div>
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'tools.circle_stopwatch' }">{{ $t('page.circle_stop_watch') }}</router-link></div>
                 </div>
             </div>

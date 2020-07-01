@@ -48,6 +48,14 @@ const router = new Router({
                     meta: {
                         name: 'page.countdown_timer'
                     }
+                },
+                {
+                    path: '/tools/interval_timer',
+                    name: 'tools.interval_timer',
+                    component: () => import("./tools/TabataTimerRouter.vue"),
+                    meta: {
+                        name: 'page.interval_timer'
+                    }
                 }
             ]
         }
