@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import ENV from "../configs/env";
+import Store from  '../store';
 
 Vue.use(Router);
 
@@ -56,13 +57,37 @@ const router = new Router({
                     meta: {
                         name: 'page.interval_timer'
                     }
-                }
+                },
+
+                /* Auth */
+                {
+                    path: '/login',
+                    name: 'auth.login',
+                    component: () => import("./auth/LoginRouter.vue"),
+                    meta: {
+                        name: 'page.login',
+                        auth: false
+                    }
+                },
             ]
         }
     ],
 });
 
 router.beforeEach(async (to, from, next) => {
+    // Проверка авторизованности пользователя
+    let auth_page = to.meta.auth;
+    if(auth_page !== undefined) {
+        let auth_user = Store.getters['auth/status'];
+        if (auth_page !== auth_user) {
+            if(auth_user){
+                next(to.name === 'home' ? false : '/');
+            }else{
+                next(to.name === 'auth.login' ? false : 'login');
+            }
+        }
+    }
+
     // Установка заголовка
     document.title = $t(to.meta.name) + ' - ' + ENV.name;
 

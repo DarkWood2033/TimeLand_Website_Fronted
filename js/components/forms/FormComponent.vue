@@ -1,18 +1,19 @@
 <template>
     <div id="form">
-            <div><h2 class="text_center text_bold my-3 text_secondary">{{ label }}</h2></div>
-            <div class="my-3">
-                <component
-                    :is="form"
-                    :submit="submit"
-                    :data="data"
-                    @error="handleError"
-                    @success="handleSuccess"
-                ></component>
-            </div>
-            <div class="action my-3 text_center">
-                <button class="light secondary" @click="send">{{ btnText || $t('tags.button.send') }}</button>
-            </div>
+        <div><h2 class="text_center text_bold my-3 text_secondary">{{ label }}</h2></div>
+        <div v-if="errorMsg" class="my-2 text_error text_center text_bold">{{ errorMsg }}</div>
+        <div class="my-3">
+            <component
+                :is="form"
+                :submit="submit"
+                :data="data"
+                @error="handleError"
+                @success="handleSuccess"
+            ></component>
+        </div>
+        <div class="action my-3 text_center">
+            <button class="light secondary" @click="send">{{ btnText || $t('tags.button.send') }}</button>
+        </div>
     </div>
 </template>
 

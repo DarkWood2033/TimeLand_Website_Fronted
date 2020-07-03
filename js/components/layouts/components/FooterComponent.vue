@@ -1,7 +1,7 @@
 <template>
     <div id="footer">
         <div class="copyright">
-            <p>{{ name }} 2020. {{ $t('copyright') }}</p>
+            <p>{{ name }} 2020. {{ $t('text.copyright') }}</p>
         </div>
     </div>
 </template>

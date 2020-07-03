@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <v-form
+                    form="LoginAuth"
+                    :btnText="$t('tags.button.log_in')"
+                    @finish="afterAuth"
+                ></v-form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 text_center text_secondary text_bold my-1">
+                <router-link tag="a" :to="{ name: 'home' }">{{ $t('text.forgot_password') }}</router-link>
+            </div>
+            <div class="col-md-4 text_center text_secondary text_bold my-1">
+                <router-link tag="a" :to="{ name: 'home' }">{{ $t('text.no_have_account') }}</router-link>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'LoginRouter',
+        methods: {
+            afterAuth(){
+                this.$router.push({ name: 'home' });
+            }
+        }
+    }
+</script>
+
+<style lang="scss">
+
+</style>

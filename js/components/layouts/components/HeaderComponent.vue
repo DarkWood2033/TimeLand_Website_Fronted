@@ -14,14 +14,18 @@
                     <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'tools.circle_stopwatch' }">{{ $t('page.circle_stop_watch') }}</router-link></div>
                 </div>
             </div>
-            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.about_us') }}</router-link></div>
-            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.contact') }}</router-link></div>
-            <div @click="sub_menu = menu = false" class="account"><router-link tag="a" :to="{ name: 'home' }" href="#">{{ $t('page.account') }}</router-link></div>
+            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.about_us') }}</router-link></div>
+            <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.contact') }}</router-link></div>
+            <div @click="sub_menu = menu = false" v-if="!status" class="account"><router-link tag="a" :to="{ name: 'auth.login' }">{{ $t('page.account') }}</router-link></div>
+            <div @click="sub_menu = menu = false" v-else class="account"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.profile') }}</router-link></div>
         </div>
 
         <div class="panel">
-            <div class="account">
-                <router-link tag="a" :to="{ name: 'home' }" href="#"><p>Аккаунт</p></router-link>
+            <div v-if="!status" class="account">
+                <router-link  tag="a" :to="{ name: 'auth.login' }"><p>{{ $t('page.account') }}</p></router-link>
+            </div>
+            <div v-else class="account">
+                <router-link tag="a" :to="{ name: 'home' }"><p>{{ $t('page.profile') }}</p></router-link>
             </div>
             <div class="small">
                 <i class="fa" :class="menu ? 'fa-close' : 'fa-bars'" @click="menu = !menu"></i>
@@ -31,6 +35,7 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex';
     export default {
         name: "HeaderComponent",
         data(){
@@ -39,10 +44,21 @@
                 sub_menu: false
             }
         },
+        methods: {
+            ...mapActions({
+                logout: 'auth/logout',
+            })
+        },
+        computed: {
+            ...mapGetters({
+                status: 'auth/status',
+                user: 'auth/user'
+            })
+        }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @import "@sass/variable";
 
     $header-height: 65px;
@@ -124,7 +140,7 @@
             text-align: right;
             width: 150px;
             height: $header-height;
-            clip-path: polygon(18% 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(16% 0, 100% 0%, 100% 100%, 0% 100%);
             background-color: $secondary;
 
             .account {
@@ -156,9 +172,14 @@
                 padding-top: 15px;
             }
         }
+
+        i.fa-sign-out:hover{
+            transition: $animation;
+            color: $primary;
+        }
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 810px) {
         #header{
             .logo{
                 width: calc(100% - 65px);

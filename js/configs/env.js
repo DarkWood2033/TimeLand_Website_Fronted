@@ -1,6 +1,6 @@
 export default {
     name: 'TimeLand',
-    url: 'timer.org',
+    url: 'http://timer.org',
     description: '',
     keywords: []
 };
