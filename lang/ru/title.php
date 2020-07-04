@@ -6,6 +6,8 @@ return [
     'edit_time' => 'Редактирование времени',
     'select_sound' => 'Выбрать звук',
     'time_expired' => 'Время вышло',
-    'finish' => 'Финиш'
+    'finish' => 'Финиш',
+    'success_registration' => 'Успешная зарегистрация',
+    'success_authorization' => 'Успешная авторизация',
 
 ];

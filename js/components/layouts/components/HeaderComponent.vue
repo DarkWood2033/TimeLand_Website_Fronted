@@ -17,7 +17,7 @@
             <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.about_us') }}</router-link></div>
             <div @click="sub_menu = menu = false"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.contact') }}</router-link></div>
             <div @click="sub_menu = menu = false" v-if="!status" class="account"><router-link tag="a" :to="{ name: 'auth.login' }">{{ $t('page.account') }}</router-link></div>
-            <div @click="sub_menu = menu = false" v-else class="account"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.profile') }}</router-link></div>
+            <div @click="sub_menu = menu = false" v-else class="account"><router-link tag="a" :to="{ name: 'auth.profile' }">{{ $t('page.profile') }}</router-link></div>
         </div>
 
         <div class="panel">
@@ -25,7 +25,7 @@
                 <router-link  tag="a" :to="{ name: 'auth.login' }"><p>{{ $t('page.account') }}</p></router-link>
             </div>
             <div v-else class="account">
-                <router-link tag="a" :to="{ name: 'home' }"><p>{{ $t('page.profile') }}</p></router-link>
+                <router-link tag="a" :to="{ name: 'auth.profile' }"><p>{{ $t('page.profile') }}</p></router-link>
             </div>
             <div class="small">
                 <i class="fa" :class="menu ? 'fa-close' : 'fa-bars'" @click="menu = !menu"></i>

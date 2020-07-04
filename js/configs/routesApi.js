@@ -11,6 +11,10 @@ export default {
         "login": {
             "url": "api/auth/login",
             "method": "POST"
+        },
+        "registration": {
+            "url": "api/auth/registration",
+            "method": "POST"
         }
     },
     "localization": {

@@ -31,6 +31,7 @@ return [
     'enter' => 'Введите :attribute',
     'forgot_password' => 'Забыл пароль',
     'no_have_account' => 'У меня нет аккаунта',
+    'have_account' => 'У меня есть аккаунта',
     'copyright' => 'Все права защищены. Копировать запрещено.'
 
 ];

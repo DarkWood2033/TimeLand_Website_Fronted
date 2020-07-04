@@ -81,10 +81,27 @@ export default {
                         reject(response);
                     });
             });
+        },
+        registration({ commit }, data){
+            return new Promise((resolve, reject) => {
+                http.route('auth.registration', { data })
+                    .then(response => {
+                        let data = response.data;
+                        commit('SIGN_IN', {
+                            user: data.user,
+                            token: data.token,
+                            expired: new Date().setMinutes(data.expired)
+                        })
+                        resolve(data.message);
+                    })
+                    .catch(response => {
+                        reject(response);
+                    });
+            });
         }
     },
     getters: {
-        status: state => state.token && state.user,
+        status: state => !!(state.token && state.user),
         user: state => state.user
     },
 };

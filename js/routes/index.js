@@ -69,6 +69,24 @@ const router = new Router({
                         auth: false
                     }
                 },
+                {
+                    path: '/registration',
+                    name: 'auth.registration',
+                    component: () => import("./auth/RegistrationRouter.vue"),
+                    meta: {
+                        name: 'page.registration',
+                        auth: false
+                    }
+                },
+                {
+                    path: '/profile',
+                    name: 'auth.profile',
+                    component: () => import("./main/HomeRouter.vue"),
+                    meta: {
+                        name: 'page.profile',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

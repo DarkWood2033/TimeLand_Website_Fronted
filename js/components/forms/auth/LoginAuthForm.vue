@@ -48,7 +48,7 @@
             send(){
                 this.$store.dispatch('auth/login', this.getData)
                     .then(message => {
-                        this.success({ message: message });
+                        this.success({ data: message });
                     })
                     .catch(response => {
                         let status = response.status;
@@ -58,7 +58,7 @@
                         }else if(status === 429){
                             this.error({ message: 'Вы истратили все попытки в хода в ваш аккаунт. Попробуйте войти по позже!' });
                         }else{
-                            this.error(response.data.message);
+                            this.error({ message: response.data.message });
                         }
                     });
             }
