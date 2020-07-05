@@ -49,12 +49,9 @@ export default {
         logout({ commit }){
             return new Promise((resolve, reject) => {
                 http.route('auth.logout')
-                    .then(response => {
+                    .finally(() => {
                         commit('LOGOUT');
-                        resolve(response.data.message);
-                    })
-                    .catch(response => {
-                        reject(response);
+                        resolve();
                     });
             });
         },

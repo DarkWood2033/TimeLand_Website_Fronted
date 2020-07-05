@@ -81,7 +81,7 @@ const router = new Router({
                 {
                     path: '/profile',
                     name: 'auth.profile',
-                    component: () => import("./main/HomeRouter.vue"),
+                    component: () => import("./auth/ProfileRouter.vue"),
                     meta: {
                         name: 'page.profile',
                         auth: true

@@ -9,5 +9,6 @@ return [
     'finish' => 'Финиш',
     'success_registration' => 'Успешная зарегистрация',
     'success_authorization' => 'Успешная авторизация',
+    'logout' => 'Выход из системы',
 
 ];
