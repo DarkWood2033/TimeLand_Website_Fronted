@@ -26,6 +26,13 @@ export default {
             localStorage.removeItem('token');
             state.expired_time = 0;
             localStorage.removeItem('expired_auth')
+        },
+
+        // Email verification
+        VERIFIED(state){
+            if(state.user){
+                state.user.verified = true;
+            }
         }
     },
     actions: {
@@ -95,10 +102,31 @@ export default {
                         reject(response);
                     });
             });
+        },
+
+        // Email verification
+        resend(){
+            return new Promise((resolve, reject) => {
+                http.route('email.resend')
+                    .then(response => resolve(response))
+                    .catch(response => reject(response));
+            });
+        },
+        verify({ commit }, { expires, hash, id, signature }){
+            return new Promise((resolve, reject) => {
+                http.route('email.verify', {
+                    params: { expires, hash, id, signature }
+                })
+                    .then(response => {
+                        commit('VERIFIED');
+                        resolve(response);
+                    })
+                    .catch(response => reject(response));
+            });
         }
     },
     getters: {
         status: state => !!(state.token && state.user),
         user: state => state.user
-    },
+    }
 };

@@ -87,6 +87,15 @@ const router = new Router({
                         auth: true
                     }
                 },
+                {
+                    path: '/api/auth/verify',
+                    name: 'email.verify',
+                    component: () => import("./auth/EmailVerifyRouter.vue"),
+                    meta: {
+                        name: 'page.email_verify',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

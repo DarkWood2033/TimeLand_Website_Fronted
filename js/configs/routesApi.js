@@ -17,6 +17,20 @@ export default {
             "method": "POST"
         }
     },
+    "email": {
+        "resend": {
+            "url": "api/auth/email/resend",
+            "method": "GET"
+        },
+        "verify": {
+            "url": "api/auth/verify",
+            "method": "POST"
+        },
+        "show": {
+            "url": "api/auth/verify",
+            "method": "GET"
+        }
+    },
     "localization": {
         "load": {
             "url": "localization/load",
