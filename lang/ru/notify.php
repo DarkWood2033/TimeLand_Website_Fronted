@@ -13,6 +13,9 @@ return [
     ],
     'forgot_password' => [
         'title' => 'Отправка письма'
+    ],
+    'reset_password' => [
+        'title' => 'Сброс пароля'
     ]
 
 ];

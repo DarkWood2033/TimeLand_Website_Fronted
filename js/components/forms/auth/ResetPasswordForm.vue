@@ -49,7 +49,7 @@
         methods: {
             send(){
                 this.$store.dispatch('auth/reset', this.getData)
-                    .then(() => { this.success(); })
+                    .then(response => { this.success({ data: response.data.message }); })
                     .catch(response => {
                         let status = response.status;
                         if(status === 422){

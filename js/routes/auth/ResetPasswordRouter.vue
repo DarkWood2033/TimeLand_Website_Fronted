@@ -2,10 +2,11 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <v-form
+                v-if="token && email"
                 form="ResetPassword"
                 :btn-text="$t('tags.button.reset')"
                 :data="{ token, email }"
-                @finish="afterResetPasswordSuccess"
+                @finish="afterResetPasswordSuccess($event)"
             ></v-form>
         </div>
     </div>
@@ -21,11 +22,15 @@
             };
         },
         methods: {
-            afterResetPasswordSuccess(){
+            afterResetPasswordSuccess(message){
+                this.notifyResetPassword('success', message)
                 this.redirect();
             },
             redirect(){
                 this.$router.push({ name: 'auth.login' });
+            },
+            notifyResetPassword(type, message){
+                this.$notify.notify($t('notify.reset_password.title'), message, 5, type);
             }
         },
         mounted(){
