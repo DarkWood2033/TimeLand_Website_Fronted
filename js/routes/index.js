@@ -96,6 +96,24 @@ const router = new Router({
                         auth: true
                     }
                 },
+                {
+                    path: '/password/forgot',
+                    name: 'password.send',
+                    component: () => import("./auth/ForgotPasswordRouter.vue"),
+                    meta: {
+                        name: 'page.forgot_password',
+                        auth: false
+                    }
+                },
+                {
+                    path: 'api/auth/password/reset/:token',
+                    name: 'password.show',
+                    component: () => import("./auth/ResetPasswordRouter.vue"),
+                    meta: {
+                        name: 'page.reset_password',
+                        auth: false
+                    }
+                },
             ]
         }
     ],

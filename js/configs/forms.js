@@ -3,11 +3,15 @@ import SelectSoundForm from "../components/forms/sounds/SelectSoundForm";
 import TabataForm from "../components/forms/times/TabataForm";
 import LoginAuthForm from "../components/forms/auth/LoginAuthForm";
 import RegistrationAuthForm from "../components/forms/auth/RegistrationAuthForm";
+import ForgotPasswordForm from "../components/forms/auth/ForgotPasswordForm";
+import ResetPasswordForm from "../components/forms/auth/ResetPasswordForm";
 
 export default {
     EditTime: EditTimeForm,
     SelectSound: SelectSoundForm,
     Tabata: TabataForm,
     LoginAuth: LoginAuthForm,
-    RegistrationAuth: RegistrationAuthForm
+    RegistrationAuth: RegistrationAuthForm,
+    ForgotPassword: ForgotPasswordForm,
+    ResetPassword: ResetPasswordForm
 };

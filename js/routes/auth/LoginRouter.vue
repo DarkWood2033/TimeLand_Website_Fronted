@@ -11,7 +11,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 text_center text_secondary text_bold my-1">
-                <router-link tag="a" :to="{ name: 'home' }">{{ $t('text.forgot_password') }}</router-link>
+                <router-link tag="a" :to="{ name: 'password.send' }">{{ $t('text.forgot_password') }}</router-link>
             </div>
             <div class="col-md-4 text_center text_secondary text_bold my-1">
                 <router-link tag="a" :to="{ name: 'auth.registration' }">{{ $t('text.no_have_account') }}</router-link>

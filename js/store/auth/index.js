@@ -1,5 +1,6 @@
 import http from '../../plugins/httpRequest';
 import utils from '../../utils';
+import password from "./password";
 
 export default {
     namespaced: true,
@@ -128,5 +129,6 @@ export default {
     getters: {
         status: state => !!(state.token && state.user),
         user: state => state.user
-    }
+    },
+    modules: { password }
 };

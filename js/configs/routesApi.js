@@ -31,6 +31,20 @@ export default {
             "method": "GET"
         }
     },
+    "password": {
+        "email": {
+            "url": "api/auth/password/send",
+            "method": "POST"
+        },
+        "reset": {
+            "url": "api/auth/password/reset/{token}",
+            "method": "GET"
+        },
+        "update": {
+            "url": "api/auth/password/reset",
+            "method": "POST"
+        }
+    },
     "localization": {
         "load": {
             "url": "localization/load",
