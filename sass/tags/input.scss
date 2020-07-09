@@ -3,7 +3,86 @@
     border-color: $color_type;
 }
 
-input{
+@mixin input_checkbox($color_type){
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    & + label{
+        position: relative;
+        vertical-align: middle;
+        padding: 0 0 0 25px;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 15px;
+            height: 15px;
+            border: 2px solid $color_type;
+        }
+
+        &:after {
+            content: '';
+            position: relative;
+        }
+    }
+
+    &:checked + label:after {
+        position: absolute;
+        top: 5px;
+        left: 6px;
+        background-color: $color_type;
+        height: 8px;
+        width: 7px;
+    }
+}
+
+@mixin input_radio($color_type){
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 10px 0 0 7px;
+
+    & + label {
+        position: relative;
+        padding: 0 0 0 25px;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 15px;
+            height: 15px;
+            border: 2px solid $color_type;
+            border-radius: 50%;
+            background: white;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: $color_type;
+            opacity: 0;
+            transition: .2s;
+        }
+    }
+
+    &:checked + label:after {
+        opacity: 1;
+    }
+}
+
+input[type="text"], input[type="password"]{
     &.default {
         background-color: rgba(0, 0, 0, 0);
         border: 2px solid;
@@ -14,6 +93,22 @@ input{
             &.#{$type}{
                 @include input_default($color);
             }
+        }
+    }
+}
+
+input[type="checkbox"]{
+    @each $color, $type in $types {
+        &.#{$type}{
+            @include input_checkbox($color);
+        }
+    }
+}
+
+input[type="radio"]{
+    @each $color, $type in $types {
+        &.#{$type}{
+            @include input_radio($color);
         }
     }
 }

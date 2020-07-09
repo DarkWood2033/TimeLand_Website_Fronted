@@ -58,6 +58,7 @@ button {
     &.text{
         transition: $animation;
         background-color: rgba(0,0,0,0);
+        cursor: pointer;
 
         @each $color, $type in $types {
             &.#{$type}{

@@ -9,6 +9,7 @@
 // Tags
 @import "tags/button";
 @import "tags/input";
+@import "tags/a";
 
 // Plugins
 @import "./plugins/bootstrap/bootstrap-grid.scss";
@@ -32,11 +33,6 @@ body{
     width: 100%;
     min-width: 300px;
 }
-
-a{
-    text-decoration: none;
-}
-
 
 @each $color, $type in $types {
     .bg_#{$type}{
