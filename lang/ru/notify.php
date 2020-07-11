@@ -16,6 +16,20 @@ return [
     ],
     'reset_password' => [
         'title' => 'Сброс пароля'
+    ],
+    'login' => [
+        'title' => 'Авторизация'
+    ],
+    'registration' => [
+        'title' => 'Регистрация'
+    ],
+    'no_indicate_time' => [
+        'title' => 'Время не определено',
+        'message' => 'Пожалуйста, определите время таймер!'
+    ],
+    'time_expired' => [
+        'title' => 'Финиш',
+        'message' => 'Ваше указанное время истёк!'
     ]
 
 ];

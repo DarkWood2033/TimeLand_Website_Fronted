@@ -10,9 +10,9 @@
             <p class="py-2">
                 <span class="text_bold">{{ $t('text.confirm_email')}}:</span>
                 <span v-if="user.verified">{{ $t('text.yes') }}</span>
-                <button v-else class="text warning" @click="resendEmail">{{ $t('text.no') }}</button>
+                <button v-else class="text warning" @click="$services.auth.resendEmail">{{ $t('text.no') }}</button>
             </p>
-            <button class="my-2 text error text_center" @click="logout">Выйти</button>
+            <button class="my-2 text error text_center" @click="$services.auth.logout">{{ $t('text.logout') }}</button>
         </div>
     </div>
 </template>
@@ -21,34 +21,6 @@
     import {mapGetters} from 'vuex';
     export default {
         name: "ProfileRouter",
-        methods: {
-            logout(){
-                this.$store.dispatch('auth/logout')
-                    .finally(this.afterLogout);
-            },
-            afterLogout(){
-                this.redirect();
-            },
-            redirect(){
-                this.$router.push({ name: 'home' });
-            },
-            resendEmail(){
-                this.$store.dispatch('auth/resend')
-                    .then(this.afterResendEmailSuccess)
-                    .catch(this.afterResendEmailError);
-            },
-            afterResendEmailSuccess(){
-                this.notifyResend('success', $t('notify.resend_email.success_message'));
-            },
-            afterResendEmailError(response){
-                if(!response.handled) {
-                    this.notifyResend('error', $t('notify.resend_email.error_message'));
-                }
-            },
-            notifyResend(type, message){
-                this.$notify.notify($t('notify.resend_email.title'), message, 5, type)
-            }
-        },
         computed: {
             ...mapGetters({
                 user: 'auth/user'

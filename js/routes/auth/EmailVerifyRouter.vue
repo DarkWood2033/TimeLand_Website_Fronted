@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center">
         <div class="col-6 mx-3 text_center">
-            <button class="light primary my-3" @click="confirm">Подвердить</button>
+            <button class="light primary my-3" @click="confirm">{{ $t('tags.button.confirm') }}</button>
         </div>
     </div>
 </template>
@@ -13,23 +13,7 @@
         methods: {
             confirm(){
                 let { hash, id, expires, signature } = this.$route.query;
-                this.$store.dispatch('auth/verify', { hash, id, expires, signature })
-                    .then(this.afterConfirmSuccess)
-                    .catch(this.afterConfirmError);
-            },
-            afterConfirmSuccess(){
-                this.redirect();
-            },
-            afterConfirmError(response){
-                if(!response.handled) {
-                    this.notifyConfirmError();
-                }
-            },
-            redirect(){
-                this.$router.push({ name: 'auth.profile' });
-            },
-            notifyConfirmError(){
-                this.$notify.error($t('notify.confirm_email.title'), $t('notify.confirm_email.error_message'), 5);
+                this.$services.auth.confirmEmail({ hash, id, expires, signature });
             }
         },
         computed: {

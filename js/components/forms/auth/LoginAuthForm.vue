@@ -46,13 +46,10 @@
         },
         methods: {
             send(){
-                this.$store.dispatch('auth/login', this.getData)
-                    .then(message => {
-                        this.success({ data: message });
-                    })
+                this.$services.auth.login(this.getData)
+                    .then(() => this.success())
                     .catch(response => {
                         let status = response.status;
-
                         if(status === 422){
                             this.error({ message: 'Логин или пароль не верны!' });
                         }else if(status === 429){

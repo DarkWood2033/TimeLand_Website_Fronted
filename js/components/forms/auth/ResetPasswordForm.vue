@@ -48,8 +48,8 @@
         },
         methods: {
             send(){
-                this.$store.dispatch('auth/reset', this.getData)
-                    .then(response => { this.success({ data: response.data.message }); })
+                this.$services.auth.resetPassword(this.getData)
+                    .then(() => this.success())
                     .catch(response => {
                         let status = response.status;
                         if(status === 422){

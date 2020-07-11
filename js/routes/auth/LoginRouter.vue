@@ -5,7 +5,6 @@
                 <v-form
                     form="LoginAuth"
                     :btnText="$t('tags.button.log_in')"
-                    @finish="afterAuth($event)"
                 ></v-form>
             </div>
         </div>
@@ -22,19 +21,7 @@
 
 <script>
     export default {
-        name: 'LoginRouter',
-        methods: {
-            afterAuth(message){
-                this.sendNotify(message);
-                this.redirect();
-            },
-            redirect(){
-                this.$router.push({ name: 'auth.profile' });
-            },
-            sendNotify(message){
-                this.$notify.success($t('title.success_authorization'), message, 5);
-            }
-        }
+        name: 'LoginRouter'
     }
 </script>
 

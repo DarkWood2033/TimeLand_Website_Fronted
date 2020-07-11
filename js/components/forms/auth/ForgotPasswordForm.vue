@@ -30,10 +30,8 @@
         },
         methods: {
             send(){
-                this.$store.dispatch('auth/forgot', this.getData.email)
-                    .then(response => {
-                        this.success({ data: response.data.message })
-                    })
+                this.$services.auth.forgotPassword(this.getData)
+                    .then(() => this.success())
                     .catch(response => {
                         let status = response.status;
                         if(status === 422) {

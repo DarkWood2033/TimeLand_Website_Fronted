@@ -13,8 +13,10 @@ import notification from "@/plugins/notifications/install";
 Vue.use(notification);
 import validation from "@/plugins/validations/install";
 Vue.use(validation);
-import utils from "@/utils";
+import utils from "./utils";
 Vue.prototype.$utils = utils;
+import services from "./services";
+Vue.prototype.$services = services;
 
 Vue.config.productionTip = false;
 

@@ -115,8 +115,8 @@
             },
             finish(){
                 this.$dialog.alert({
-                    title: $t('title.finish'),
-                    message: $t('message.interval_timer_expired'),
+                    title: $t('dialog.interval_timer_expired.title'),
+                    message: $t('dialog.interval_timer_expired.message'),
                 }, {
                     btnText: $t('tags.button.accept')
                 });
