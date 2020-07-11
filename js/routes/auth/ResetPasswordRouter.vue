@@ -6,7 +6,6 @@
                 form="ResetPassword"
                 :btn-text="$t('tags.button.reset')"
                 :data="{ token, email }"
-                @finish="afterResetPasswordSuccess($event)"
             ></v-form>
         </div>
     </div>
@@ -20,18 +19,6 @@
                 token: '',
                 email: ''
             };
-        },
-        methods: {
-            afterResetPasswordSuccess(message){
-                this.notifyResetPassword('success', message)
-                this.redirect();
-            },
-            redirect(){
-                this.$router.push({ name: 'auth.login' });
-            },
-            notifyResetPassword(type, message){
-                this.$notify.notify($t('notify.reset_password.title'), message, 5, type);
-            }
         },
         mounted(){
             this.token = this.$route.params.token;

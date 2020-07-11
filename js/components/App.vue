@@ -3,15 +3,10 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex';
+    import {mapGetters} from 'vuex';
 
     export default {
         name: "App",
-        methods: {
-            ...mapActions({
-                refresh: 'auth/refresh'
-            })
-        },
         computed: {
             ...mapGetters({
                 status: 'auth/status'
@@ -19,7 +14,7 @@
         },
         mounted() {
             if(this.status){
-                this.refresh();
+                this.$services.auth.refresh();
             }
         }
     }

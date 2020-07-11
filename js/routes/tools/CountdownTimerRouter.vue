@@ -34,12 +34,14 @@
         },
         methods: {
             noIndicateTime(){
-                this.$notify.warning($t('title.no_indicate_time'), $t('message.indicate_time'), 5);
+                this.$notify.warning(
+                    $t('notify.no_indicate_time.title'), $t('notify.no_indicate_time.message'), 5
+                );
             },
             finishTimer(){
                 this.isFinish = true;
                 this.sound.play();
-                this.$notify.info($t('title.time_expired'), $t('message.time_expired'));
+                this.$notify.info($t('notify.time_expired.title'), $t('notify.time_expired.message'));
             },
             offTimer(){
                 this.sound.stop();

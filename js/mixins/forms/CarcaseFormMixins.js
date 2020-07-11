@@ -34,7 +34,7 @@ export default {
 
             this.handle();
         },
-        handleSuccess(data){
+        handleSuccess(data = {}){
             this.errorMsg = null;
             this.successMsg = data.message || null;
             this.dataResult = data.data || null;

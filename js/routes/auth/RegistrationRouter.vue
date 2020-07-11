@@ -5,7 +5,6 @@
                 <v-form
                     form="RegistrationAuth"
                     :btnText="$t('tags.button.registration')"
-                    @finish="afterRegistration($event)"
                 ></v-form>
             </div>
         </div>
@@ -19,19 +18,7 @@
 
 <script>
     export default {
-        name: "RegisterRouter",
-        methods: {
-            afterRegistration(message){
-                this.sendNotify(message)
-                this.redirect();
-            },
-            redirect(){
-                this.$router.push({ name: 'auth.profile' });
-            },
-            sendNotify(message){
-                this.$notify.success($t('title.success_registration'), message, 5);
-            }
-        }
+        name: "RegisterRouter"
     }
 </script>
 

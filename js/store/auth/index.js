@@ -47,15 +47,13 @@ export default {
                             token: data.token,
                             expired: new Date().setMinutes(data.expired)
                         });
-                        resolve(data.message);
+                        resolve(response);
                     })
-                    .catch(response => {
-                        reject(response);
-                    });
+                    .catch(response => reject(response));
             });
         },
         logout({ commit }){
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 http.route('auth.logout')
                     .finally(() => {
                         commit('LOGOUT');
@@ -79,7 +77,7 @@ export default {
                             token: data.token,
                             expired: new Date().setMinutes(data.expired)
                         });
-                        resolve();
+                        resolve(response);
                     })
                     .catch(response => {
                         commit('LOGOUT');
@@ -97,11 +95,9 @@ export default {
                             token: data.token,
                             expired: new Date().setMinutes(data.expired)
                         })
-                        resolve(data.message);
+                        resolve(response);
                     })
-                    .catch(response => {
-                        reject(response);
-                    });
+                    .catch(response => reject(response));
             });
         },
 

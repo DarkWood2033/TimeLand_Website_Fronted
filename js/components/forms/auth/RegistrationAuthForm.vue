@@ -78,10 +78,8 @@
         },
         methods: {
             send(){
-                this.$store.dispatch('auth/registration', this.getData)
-                    .then(message => {
-                        this.success({ data: message });
-                    })
+                this.$services.auth.registration(this.getData)
+                    .then(() => this.success())
                     .catch(response => {
                         let status = response.status;
                         let data = response.data;
