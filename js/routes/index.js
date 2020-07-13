@@ -114,6 +114,17 @@ const router = new Router({
                         auth: false
                     }
                 },
+
+                /* Timers */
+                {
+                    path: 'user/timers',
+                    name: 'user.timers',
+                    component: () => import("./timers/UserTimersRouter.vue"),
+                    meta: {
+                        name: 'page.user_timers',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

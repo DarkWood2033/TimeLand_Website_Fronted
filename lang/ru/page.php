@@ -21,6 +21,9 @@ return [
     'profile' => 'Профиль',
     'email_verify' => 'Подверждение почтового ящика',
     'forgot_password' => 'Восстановление пароля',
-    'reset_password' => 'Сброс пароля'
+    'reset_password' => 'Сброс пароля',
+
+    // Timers
+    'user_timers' => 'Мои таймеры'
 
 ];

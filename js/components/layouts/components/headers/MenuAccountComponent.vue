@@ -5,7 +5,7 @@
             <router-link tag="a" :to="{ name: 'auth.profile' }">{{ $t('page.profile') }}</router-link>
         </div>
         <div class="item_menu" @click="close">
-            <router-link tag="a" :to="{ name: 'home' }">{{ $t('text.my_timers') }}</router-link>
+            <router-link tag="a" :to="{ name: 'user.timers' }">{{ $t('page.user_timers') }}</router-link>
         </div>
         <div class="logout" @click="close">
             <button class="text error logout" @click="logout">{{ $t('text.logout') }}</button>

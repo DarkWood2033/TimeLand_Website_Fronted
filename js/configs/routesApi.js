@@ -45,6 +45,30 @@ export default {
             "method": "POST"
         }
     },
+    "user": {
+        "timers": {
+            "index": {
+                "url": "api/user/timers",
+                "method": "GET"
+            },
+            "store": {
+                "url": "api/user/timers",
+                "method": "POST"
+            },
+            "show": {
+                "url": "api/user/timers/{timer}",
+                "method": "GET"
+            },
+            "update": {
+                "url": "api/user/timers/{timer}",
+                "method": "PUT"
+            },
+            "destroy": {
+                "url": "api/user/timers/{timer}",
+                "method": "DELETE"
+            }
+        }
+    },
     "localization": {
         "load": {
             "url": "localization/load",

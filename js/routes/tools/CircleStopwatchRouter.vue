@@ -6,7 +6,7 @@
         ></v-circle-stopwatch-view>
 
         <v-time-item-view
-            :items="times"
+            :items="items"
             :page="page"
             :number="number"
             @delete="deleteTime($event)"

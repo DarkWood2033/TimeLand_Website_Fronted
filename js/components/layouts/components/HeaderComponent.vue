@@ -19,7 +19,7 @@
             <div v-if="status" class="account"><a @click="sub_menu_account = !sub_menu_account">{{ $t('page.account') }} <i class="fa fa-chevron-down"></i></a>
                 <div :class="{ active: sub_menu_account }" @mouseleave="sub_menu_account = false" class="sub_menu">
                     <div @click="closeMenu"><router-link tag="a" :to="{ name: 'auth.profile' }">{{ $t('page.profile') }}</router-link></div>
-                    <div @click="closeMenu"><router-link tag="a" :to="{ name: 'home' }">{{ $t('text.my_timers') }}</router-link></div>
+                    <div @click="closeMenu"><router-link tag="a" :to="{ name: 'user.timers' }">{{ $t('page.user_timers') }}</router-link></div>
                 </div>
             </div>
             <div v-else class="account" @click="closeMenu"><router-link tag="a" :to="{ name: 'auth.login' }">{{ $t('page.account') }}</router-link></div>

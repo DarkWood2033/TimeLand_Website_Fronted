@@ -15,7 +15,10 @@ export default {
     },
     logout(){
         return store.dispatch('auth/logout')
-            .finally(() => redirect.home());
+            .finally(() => {
+                store.dispatch('timers/reset');
+                redirect.home()
+            });
     },
     registration(data){
         return store.dispatch('auth/registration', data)

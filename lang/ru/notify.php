@@ -30,6 +30,10 @@ return [
     'time_expired' => [
         'title' => 'Финиш',
         'message' => 'Ваше указанное время истёк!'
+    ],
+    'user_timers' => [
+        'title' => 'Таймер',
+        'delete_success_message' => 'Вы успешно удалили таймер'
     ]
 
 ];
