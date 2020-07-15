@@ -31,7 +31,7 @@
             <div v-else-if="isEmpty" class="item_container">
                 <p class="text">{{ $t('text.no_data') }}</p>
             </div>
-            <div v-else class="item_container" v-for="(item, n) in render()" :key="item.name">
+            <div v-else class="item_container" v-for="(item, n) in render()" :key="n">
                 <p class="item" v-for="(field, i) in fields" :key="i" :data-label="field.name">
                     <slot :name="field.column" :item="item" :id="getKey(n)" tag="p" :data-label="field.name">
                         {{ item[field.column] }}
@@ -126,13 +126,12 @@
             transform: skewX(-10deg);
             width: calc(100% - 30px);
             background-color: $primary;
+            cursor: default;
 
             &.head{
                 background-color: $secondary;
                 color: white;
                 p{
-                    cursor: default;
-
                     .sort {
                         cursor: pointer;
                         i{
@@ -164,6 +163,9 @@
             flex-grow: 1;
             flex-basis: 25px;
             transform: skewX(10deg);
+            white-space: nowrap; /* Запрещаем перенос строк */
+            overflow: hidden; /* Обрезаем все, что не помещается в область */
+            text-overflow: ellipsis; /* Добавляем многоточие */
         }
         .text{
             text-align: center;

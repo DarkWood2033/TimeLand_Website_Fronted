@@ -1,7 +1,12 @@
 <template>
     <div>
         <div class="ml-4">
-            <button class="light secondary" @click="redirectCreate">{{ $t('tags.button.create') }}</button>
+            <button class="light secondary m-2" @click="redirectCreateInterval">
+                {{ $t('tags.button.create_interval_timer') }}
+            </button>
+            <button class="light secondary m-2" @click="redirectConstructor">
+                {{ $t('tags.button.constructor_timer') }}
+            </button>
         </div>
 
         <v-timer-item-view
@@ -39,8 +44,11 @@
             deleteItem(item){
                 this.$services.timers.delete(item);
             },
-            redirectCreate(){
+            redirectConstructor(){
                 this.$router.push({ name: 'home' });
+            },
+            redirectCreateInterval(){
+                this.$router.push({ name: 'user.timers.add.interval' });
             },
             redirectEdit(item){
                 this.$router.push({ name: 'home' });

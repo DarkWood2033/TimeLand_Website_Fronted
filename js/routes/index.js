@@ -125,6 +125,15 @@ const router = new Router({
                         auth: true
                     }
                 },
+                {
+                    path: 'user/timers/add/interval',
+                    name: 'user.timers.add.interval',
+                    component: () => import("./timers/IntervalUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.add_interval_user_timers',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

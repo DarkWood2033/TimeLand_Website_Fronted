@@ -9,6 +9,7 @@ return [
         'off' => 'Выключить',
         'create' => 'Создать',
         'accept' => 'Принять',
+        'add' => 'Добавить',
 
         'start' => 'Старт',
         'stop' => 'Стоп',
@@ -21,7 +22,10 @@ return [
 
         'log_in' => 'Авторизоваться',
         'registration' => 'Зарегистрироваться',
-        'confirm' => 'Подтвердить'
+        'confirm' => 'Подтвердить',
+
+        'create_interval_timer' => 'Создать интервальный таймер',
+        'constructor_timer' => 'Конструктор таймера'
     ],
     'checkbox' => [
         'remember_me' => 'Запомнить меня'

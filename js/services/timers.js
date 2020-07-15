@@ -12,10 +12,19 @@ export default {
                 store.dispatch('system/onLoading');
                 store.dispatch('timers/delete', item)
                     .then(() => {
-                        store.dispatch('system/offLoading');
                         notify('user_timers', 'success', $t('notify.user_timers.delete_success_message'));
-                    });
+                    })
+                    .finally(() => store.dispatch('system/offLoading'));
             }
         });
+    },
+    add(item){
+        store.dispatch('system/onLoading');
+        store.dispatch('timers/add', item)
+            .then(() => {
+                notify('user_timers', 'success', $t('notify.user_timers.add_success_message'));
+                redirect.my_timers();
+            })
+            .finally(() => store.dispatch('system/offLoading'));
     }
 };

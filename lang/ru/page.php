@@ -24,6 +24,8 @@ return [
     'reset_password' => 'Сброс пароля',
 
     // Timers
-    'user_timers' => 'Мои таймеры'
+    'user_timers' => 'Мои таймеры',
+    'add_constructor_user_timers' => 'Конструктор таймера',
+    'add_interval_user_timers' => 'Создание интервального таймера'
 
 ];

@@ -15,5 +15,8 @@ export default {
     },
     login(){
         redirect('auth.login');
+    },
+    my_timers(){
+        redirect('user.timers')
     }
 }
