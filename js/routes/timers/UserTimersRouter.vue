@@ -20,6 +20,7 @@
 
         <v-pagination
             class="row justify-content-center"
+            v-if="isMany"
             :page="page"
             :number="count"
             @change="page = $event"
@@ -45,7 +46,7 @@
                 this.$services.timers.delete(item);
             },
             redirectConstructor(){
-                this.$router.push({ name: 'home' });
+                this.$router.push({ name: 'user.timers.add.constructor' });
             },
             redirectCreateInterval(){
                 this.$router.push({ name: 'user.timers.add.interval' });

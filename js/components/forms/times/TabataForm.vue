@@ -1,10 +1,9 @@
 <template>
     <div class="row justify-content-center">
         <div v-if="configTabata" class="col-12 mb-2">
-            <p class="text_secondary h3">
-                <span class="text_bold">{{ $t('text.common_time') }}:</span>
-                {{ configTabata.getCommonTime().viewH_M_S() }}
-            </p>
+            <v-common-time-score-board-view
+                :time="configTabata.getCommonTime()"
+            ></v-common-time-score-board-view>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.type.before') }}</label>
@@ -75,6 +74,7 @@
     import RangeComponent from "../../ranges/RangeComponent";
     import TimeM_SRangeView from "../../../views/ranges/TimeM_SRangeView";
     import ConfigTabata from "../../../entities/ConfigTabata";
+    import CommonTimeScoreBoardView from "../../../views/scoreboards/CommonTimeScoreBoardView";
 
     export default {
         name: "TabataForm",
@@ -107,7 +107,8 @@
         },
         components: {
             vRange: RangeComponent,
-            vTimeMSRangeView: TimeM_SRangeView
+            vTimeMSRangeView: TimeM_SRangeView,
+            vCommonTimeScoreBoardView: CommonTimeScoreBoardView
         },
         mixins: [FormMixins]
     }

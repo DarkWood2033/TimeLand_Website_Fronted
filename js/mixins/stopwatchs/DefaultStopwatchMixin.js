@@ -23,9 +23,6 @@ export default {
         },
     },
     computed: {
-        isMany(){
-            return this.items.length > this.number;
-        },
         isTimesEmpty(){
             return !(this.items.length !== 0);
         }

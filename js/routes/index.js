@@ -134,6 +134,15 @@ const router = new Router({
                         auth: true
                     }
                 },
+                {
+                    path: 'user/timers/add/constructor',
+                    name: 'user.timers.add.constructor',
+                    component: () => import("./timers/ConstructorUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.add_constructor_user_timers',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

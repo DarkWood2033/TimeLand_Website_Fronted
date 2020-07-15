@@ -10,7 +10,10 @@ export default {
     computed: {
         count(){
             return Math.ceil(this.items.length / this.number) || 1;
-        }
+        },
+        isMany(){
+            return this.items.length > this.number;
+        },
     },
     components: {
         vPagination: PaginationComponent

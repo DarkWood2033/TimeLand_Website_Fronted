@@ -35,6 +35,10 @@ return [
         'title' => 'Таймер',
         'delete_success_message' => 'Вы успешно удалили таймер',
         'add_success_message' => 'Вы успешно добавили таймер'
+    ],
+    'empty_constructor' => [
+        'title' => 'Конструктор таймера',
+        'message' => 'Конструктор пустой. Пожалуйста, заполните!'
     ]
 
 ];
