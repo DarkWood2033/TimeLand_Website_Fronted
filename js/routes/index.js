@@ -128,7 +128,7 @@ const router = new Router({
                 {
                     path: 'user/timers/add/interval',
                     name: 'user.timers.add.interval',
-                    component: () => import("./timers/IntervalUserTimerRouter.vue"),
+                    component: () => import("./timers/adds/AddIntervalUserTimerRouter.vue"),
                     meta: {
                         name: 'page.add_interval_user_timers',
                         auth: true
@@ -137,9 +137,18 @@ const router = new Router({
                 {
                     path: 'user/timers/add/constructor',
                     name: 'user.timers.add.constructor',
-                    component: () => import("./timers/ConstructorUserTimerRouter.vue"),
+                    component: () => import("./timers/adds/AddConstructorUserTimerRouter.vue"),
                     meta: {
                         name: 'page.add_constructor_user_timers',
+                        auth: true
+                    }
+                },
+                {
+                    path: 'user/timers/edit/interval/:id',
+                    name: 'user.timers.edit',
+                    component: () => import("./timers/edits/EditUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.edit_user_timers',
                         auth: true
                     }
                 },

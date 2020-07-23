@@ -1,14 +1,14 @@
 import Time from './Time';
 
-export default class ConfigTabata {
-    constructor(){
-        this._before = 0;
-        this._work = 0;
-        this._rest = 0;
-        this._cycles = 0;
-        this._sets = 0;
-        this._betweenCycles = 0;
-        this._after = 0;
+export default class IntervalConfig {
+    constructor(cfg = {}){
+        this._before = cfg.before || 0;
+        this._work = cfg.work || 0;
+        this._rest = cfg.rest || 0;
+        this._cycles = cfg.cycles || 0;
+        this._sets = cfg.sets || 0;
+        this._betweenCycles = cfg.betweenCycles || 0;
+        this._after = cfg.after || 0;
     }
 
     // Setters

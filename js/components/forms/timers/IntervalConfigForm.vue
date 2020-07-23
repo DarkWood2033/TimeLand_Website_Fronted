@@ -1,22 +1,24 @@
 <template>
-    <div class="row justify-content-center">
-        <div v-if="configTabata" class="col-12 mb-2">
+    <div v-if="intervalConfig" class="row justify-content-center">
+        <div class="col-12 mb-2">
             <v-common-time-score-board-view
-                :time="configTabata.getCommonTime()"
+                :time="intervalConfig.getCommonTime()"
             ></v-common-time-score-board-view>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.type.before') }}</label>
             <v-time-m-s-range-view
                 class="pt-1"
-                @count="configTabata.before = $event"
+                :value="intervalConfig.before"
+                @count="intervalConfig.before = $event"
             ></v-time-m-s-range-view>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.time_work') }}</label>
             <v-time-m-s-range-view
                 class="pt-1"
-                @count="configTabata.work = $event"
+                :value="intervalConfig.work"
+                @count="intervalConfig.work = $event"
             ></v-time-m-s-range-view>
             <v-message
                 v-if="errors.work"
@@ -27,7 +29,8 @@
             <label>{{ $t('text.time_rest') }}</label>
             <v-time-m-s-range-view
                 class="pt-1"
-                @count="configTabata.rest = $event"
+                :value="intervalConfig.rest"
+                @count="intervalConfig.rest = $event"
             ></v-time-m-s-range-view>
             <v-message
                 v-if="errors.rest"
@@ -38,32 +41,36 @@
             <label>{{ $t('text.count_sets') }}</label>
             <v-range
                 class="pt-1"
+                :value="intervalConfig.sets"
                 :min="1"
                 :max="25"
-                @count="configTabata.sets = $event"
+                @count="intervalConfig.sets = $event"
             ></v-range>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.count_cycles') }}</label>
             <v-range
                 class="pt-1"
+                :value="intervalConfig.cycles"
                 :min="1"
                 :max="25"
-                @count="configTabata.cycles = $event"
+                @count="intervalConfig.cycles = $event"
             ></v-range>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.rest_between_cycles') }}</label>
             <v-time-m-s-range-view
                 class="pt-1"
-                @count="configTabata.betweenCycles = $event"
+                :value="intervalConfig.betweenCycles"
+                @count="intervalConfig.betweenCycles = $event"
             ></v-time-m-s-range-view>
         </div>
         <div class="col-md-4 col-sm-6 my-1">
             <label>{{ $t('text.type.after') }}</label>
             <v-time-m-s-range-view
                 class="pt-1"
-                @count="configTabata.after = $event"
+                :value="intervalConfig.after"
+                @count="intervalConfig.after = $event"
             ></v-time-m-s-range-view>
         </div>
     </div>
@@ -73,14 +80,14 @@
     import FormMixins from "../../../mixins/forms/FormMixins";
     import RangeComponent from "../../ranges/RangeComponent";
     import TimeM_SRangeView from "../../../views/ranges/TimeM_SRangeView";
-    import ConfigTabata from "../../../entities/ConfigTabata";
+    import IntervalConfig from "../../../entities/IntervalConfig";
     import CommonTimeScoreBoardView from "../../../views/scoreboards/CommonTimeScoreBoardView";
 
     export default {
-        name: "TabataForm",
+        name: "IntervalConfig",
         data(){
             return {
-                configTabata: null,
+                intervalConfig: null,
             };
         },
         methods: {
@@ -90,7 +97,7 @@
         },
         computed: {
             getData(){
-                return this.configTabata;
+                return this.intervalConfig;
             },
             getMessages(){
                 return {};
@@ -103,7 +110,11 @@
             },
         },
         mounted() {
-            this.configTabata = new ConfigTabata();
+            if(this.data instanceof IntervalConfig){
+                this.intervalConfig = this.data;
+            }else{
+                this.intervalConfig = new IntervalConfig();
+            }
         },
         components: {
             vRange: RangeComponent,

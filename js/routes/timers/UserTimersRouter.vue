@@ -36,10 +36,10 @@
 
     export default {
         name: "UserTimersRouter",
-        computed: {
-            ...mapGetters({
-                items: 'timers/all'
-            })
+        data(){
+            return {
+                items: []
+            };
         },
         methods: {
             deleteItem(item){
@@ -52,19 +52,27 @@
                 this.$router.push({ name: 'user.timers.add.interval' });
             },
             redirectEdit(item){
-                this.$router.push({ name: 'home' });
+                this.$router.push({ name: 'user.timers.edit', params: { id: item.id } });
             },
             redirectPlay(item){
                 this.$router.push({ name: 'home' });
             }
         },
         beforeCreate() {
-            if(!this.$store.getters['timers/isLoading']) {
-                this.$store.dispatch('system/onLoading');
-                this.$store.dispatch('timers/fetchAll')
-                    .finally(() => {
-                        this.$store.dispatch('system/offLoading');
-                    });
+            this.$store.dispatch('system/onLoading');
+            this.$store.dispatch('timers/fetchAll')
+                .then(() => {
+                    this.items = this.$store.getters['timers/all'];
+                })
+                .finally(() => {
+                    this.$store.dispatch('system/offLoading');
+                });
+        },
+        watch: {
+            items(){
+                if(this.count < this.page){
+                    this.page = (this.count === 0) ? 1 : this.count;
+                }
             }
         },
         components: {

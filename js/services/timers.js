@@ -10,7 +10,7 @@ export default {
             message: $t('dialog.user_timers.delete_message'),
             accept: () => {
                 store.dispatch('system/onLoading');
-                store.dispatch('timers/delete', item)
+                store.dispatch('timers/delete', item.id)
                     .then(() => {
                         notify('user_timers', 'success', $t('notify.user_timers.delete_success_message'));
                     })
@@ -23,6 +23,15 @@ export default {
         store.dispatch('timers/add', item)
             .then(() => {
                 notify('user_timers', 'success', $t('notify.user_timers.add_success_message'));
+                redirect.my_timers();
+            })
+            .finally(() => store.dispatch('system/offLoading'));
+    },
+    update(item){
+        store.dispatch('system/onLoading');
+        store.dispatch('timers/update', item)
+            .then(() => {
+                notify('user_timers', 'success', $t('notify.user_timers.update_success_message'));
                 redirect.my_timers();
             })
             .finally(() => store.dispatch('system/offLoading'));

@@ -68,7 +68,7 @@
 </template>
 
 <script>
-    import IteratorTabata from "../../entities/IteratorTabata";
+    import IteratorItemIntervalTimer from "../../entities/IteratorItemIntervalTimer";
     import TimerMixins from "../../mixins/times/TimerMixins";
     import TimeComponent from "../../components/times/TimeComponent";
     import SmallTimeComponent from "../../components/times/SmallTimeComponent";
@@ -80,7 +80,7 @@
         name: "IntervalTimerView",
         props: {
             iterator: {
-                type: IteratorTabata,
+                type: IteratorItemIntervalTimer,
                 required: true
             }
         },

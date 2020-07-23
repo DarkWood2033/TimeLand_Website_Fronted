@@ -2,7 +2,7 @@
     <div>
         <v-form
             v-if="!iterator"
-            form="Tabata"
+            form="IntervalConfig"
             :btn-text="$t('tags.button.create')"
             @finish="create($event)"
         ></v-form>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import IteratorTabata from "../../entities/IteratorTabata";
+    import IteratorItemIntervalTimer from "../../entities/IteratorItemIntervalTimer";
     import IntervalTimerView from "../../views/timers/TabataTimerView";
 
     export default {
@@ -27,7 +27,7 @@
         methods: {
             create(data){
                 let items = this.$utils.interval.tabata(data);
-                this.iterator = new IteratorTabata(items, data.sets);
+                this.iterator = new IteratorItemIntervalTimer(items, data.sets);
             }
         },
         components: {

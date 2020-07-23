@@ -1,6 +1,6 @@
-import IteratorInterval from "./IteratorInterval";
+import IteratorItemTimer from "./IteratorItemTimer";
 
-export default class IteratorTabata extends IteratorInterval {
+export default class IteratorItemIntervalTimer extends IteratorItemTimer {
     constructor(items, count) {
         super(items);
         this._SetCycle = [];

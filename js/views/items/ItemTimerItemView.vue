@@ -83,7 +83,7 @@
         color: $error;
         transition: $animation;
     }
-    .fa-chevron-up:hover, .fa-chevron-down:hover{
+    .fa-pencil-square-o:hover, .fa-chevron-up:hover, .fa-chevron-down:hover{
         color: $secondary;
         transition: $animation;
     }

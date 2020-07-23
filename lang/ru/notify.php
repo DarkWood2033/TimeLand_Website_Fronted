@@ -34,7 +34,8 @@ return [
     'user_timers' => [
         'title' => 'Таймер',
         'delete_success_message' => 'Вы успешно удалили таймер',
-        'add_success_message' => 'Вы успешно добавили таймер'
+        'add_success_message' => 'Вы успешно добавили таймер',
+        'update_success_message' => 'Вы успешно изменили таймер'
     ],
     'empty_constructor' => [
         'title' => 'Конструктор таймера',
