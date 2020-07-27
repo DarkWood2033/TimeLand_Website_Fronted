@@ -114,6 +114,53 @@ const router = new Router({
                         auth: false
                     }
                 },
+
+                /* Timers */
+                {
+                    path: 'user/timers',
+                    name: 'user.timers',
+                    component: () => import("./timers/UserTimersRouter.vue"),
+                    meta: {
+                        name: 'page.user_timers',
+                        auth: true
+                    }
+                },
+                {
+                    path: 'user/timers/add/interval',
+                    name: 'user.timers.add.interval',
+                    component: () => import("./timers/adds/AddIntervalUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.add_interval_user_timers',
+                        auth: true
+                    }
+                },
+                {
+                    path: 'user/timers/add/constructor',
+                    name: 'user.timers.add.constructor',
+                    component: () => import("./timers/adds/AddConstructorUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.add_constructor_user_timers',
+                        auth: true
+                    }
+                },
+                {
+                    path: 'user/timers/edit/interval/:id',
+                    name: 'user.timers.edit',
+                    component: () => import("./timers/edits/EditUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.edit_user_timers',
+                        auth: true
+                    }
+                },
+                {
+                    path: 'user/timers/play/:id',
+                    name: 'user.timers.play',
+                    component: () => import("./timers/plays/PlayUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.player_user_timers',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

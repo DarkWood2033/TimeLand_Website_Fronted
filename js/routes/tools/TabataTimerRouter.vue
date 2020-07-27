@@ -2,20 +2,20 @@
     <div>
         <v-form
             v-if="!iterator"
-            form="Tabata"
+            form="IntervalConfig"
             :btn-text="$t('tags.button.create')"
             @finish="create($event)"
         ></v-form>
-        <v-interval-timer-view
+        <v-player-interval-timer-view
             v-else
             :iterator="iterator"
-        ></v-interval-timer-view>
+        ></v-player-interval-timer-view>
     </div>
 </template>
 
 <script>
-    import IteratorTabata from "../../entities/IteratorTabata";
-    import IntervalTimerView from "../../views/timers/TabataTimerView";
+    import IteratorItemIntervalTimer from "../../entities/IteratorItemIntervalTimer";
+    import PlayerIntervalTimerView from "../../views/timers/PlayerIntervalTimerView";
 
     export default {
         name: "IntervalTimerRouter",
@@ -27,11 +27,11 @@
         methods: {
             create(data){
                 let items = this.$utils.interval.tabata(data);
-                this.iterator = new IteratorTabata(items, data.sets);
+                this.iterator = new IteratorItemIntervalTimer(items, data.sets);
             }
         },
         components: {
-            vIntervalTimerView: IntervalTimerView
+            vPlayerIntervalTimerView: PlayerIntervalTimerView
         }
     }
 </script>

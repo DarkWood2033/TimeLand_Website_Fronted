@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 export default {
     sort(key, order = 'asc') {
         return (a, b) => {
@@ -21,5 +23,13 @@ export default {
                 (order === 'desc') ? (comparison * -1) : comparison
             );
         }
+    },
+    swap(array, elOne, elTwo){
+        if(!array[elOne]) return array;
+        if(!array[elTwo]) return array;
+        let p = array[elOne];
+        Vue.set(array, elOne, array[elTwo]);
+        Vue.set(array, elTwo, p);
+        return array;
     }
 }

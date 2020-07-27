@@ -15,6 +15,8 @@
         <v-dialog></v-dialog>
 
         <v-notification></v-notification>
+
+        <v-loading></v-loading>
     </div>
 </template>
 
@@ -24,6 +26,7 @@
     import FooterComponent from "./components/FooterComponent";
     import DialogComponent from "./components/DialogComponent";
     import NotificationComponent from "./components/NotificationComponent";
+    import LoadingComponent from "./components/LoadingComponent";
 
     export default {
         name: "MainLayout",
@@ -32,7 +35,8 @@
             vTitle: TitleComponent,
             vFooter: FooterComponent,
             vDialog: DialogComponent,
-            vNotification: NotificationComponent
+            vNotification: NotificationComponent,
+            vLoading: LoadingComponent
         }
     }
 </script>
@@ -46,13 +50,13 @@
 </style>
 <style lang="scss" scoped>
     @import "@sass/variable";
-    
+
     div.main-layout{
         display: flex;
         flex-direction: column;
         height: 100%;
     }
-    
+
     #content {
         flex: 1 0 auto;
         padding-bottom: 30px;

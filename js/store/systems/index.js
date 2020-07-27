@@ -1,5 +1,6 @@
 import dialogs from '@plugin/dialog/store';
 import notifications from '@plugin/notification/store';
+import loading from './loading';
 
 export default {
     namespaced: true,
@@ -7,5 +8,5 @@ export default {
     mutations: {},
     actions: {},
     getters: {},
-    modules: { dialogs, notifications }
+    modules: { dialogs, notifications, loading }
 };

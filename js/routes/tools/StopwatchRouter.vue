@@ -7,7 +7,7 @@
 
         <v-time-item-view
             v-if="!isTimesEmpty"
-            :items="times"
+            :items="items"
             :page="page"
             :number="number"
             @delete="deleteTime($event)"

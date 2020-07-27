@@ -1,17 +1,19 @@
 import EditTimeForm from "../components/forms/times/EditTimeForm";
 import SelectSoundForm from "../components/forms/sounds/SelectSoundForm";
-import TabataForm from "../components/forms/times/TabataForm";
+import IntervalConfigForm from "../components/forms/timers/IntervalConfigForm";
 import LoginAuthForm from "../components/forms/auth/LoginAuthForm";
 import RegistrationAuthForm from "../components/forms/auth/RegistrationAuthForm";
 import ForgotPasswordForm from "../components/forms/auth/ForgotPasswordForm";
 import ResetPasswordForm from "../components/forms/auth/ResetPasswordForm";
+import ItemTimerForm from "../components/forms/timers/ItemTimerForm";
 
 export default {
     EditTime: EditTimeForm,
     SelectSound: SelectSoundForm,
-    Tabata: TabataForm,
+    IntervalConfig: IntervalConfigForm,
     LoginAuth: LoginAuthForm,
     RegistrationAuth: RegistrationAuthForm,
     ForgotPassword: ForgotPasswordForm,
-    ResetPassword: ResetPasswordForm
+    ResetPassword: ResetPasswordForm,
+    ItemTimer: ItemTimerForm
 };

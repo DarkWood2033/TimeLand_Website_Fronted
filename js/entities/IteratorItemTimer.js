@@ -1,6 +1,6 @@
-import ItemInterval from "./ItemInterval";
+import ItemTimer from "./ItemTimer";
 
-export default class IteratorInterval {
+export default class IteratorItemTimer {
     constructor(items){
         this._commonTime = 0;
         this._step = 0;
@@ -8,7 +8,7 @@ export default class IteratorInterval {
         this._items = items.map(item => {
             this._currentTime.push(this._commonTime);
             this._commonTime += item.time;
-            return new ItemInterval(item);
+            return new ItemTimer(item);
         });
     }
 

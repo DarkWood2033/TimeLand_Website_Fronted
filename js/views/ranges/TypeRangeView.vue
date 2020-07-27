@@ -1,12 +1,11 @@
 <template>
     <v-range
-        :value="value"
-        :max="3599"
+        disabled
+        :value="localValue"
+        :max="types.length - 1"
         :view="view"
-        :validate="validate"
-        :counter="5"
         :is-vertical="isVertical"
-        @count="$emit('count', $event)"
+        @count="$emit('count', types[$event])"
     ></v-range>
 </template>
 
@@ -14,23 +13,30 @@
     import RangeComponent from "../../components/ranges/RangeComponent";
 
     export default {
-        name: "TimeM_SRangeView",
+        name: "TypeRangeView",
         props: {
             isVertical: {
                 type: Boolean,
                 default: true
             },
             value: {
-                type: Number,
-                default: 0
+                type: String,
+                default: 'work'
             }
+        },
+        data(){
+            return {
+                types: ['work', 'rest', 'after', 'before']
+            };
         },
         methods: {
             view(value){
-                return this.$utils.time.secondToTime(value).viewM_S();
-            },
-            validate(value){
-                return this.$utils.time.viewToTime(value).toSecond();
+                return $t('attribute.' + this.types[value]);
+            }
+        },
+        computed: {
+            localValue(){
+                return this.types.findIndex(item => item === this.value);
             }
         },
         components: {
