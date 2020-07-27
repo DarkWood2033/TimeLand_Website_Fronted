@@ -66,7 +66,6 @@
                     this.init();
                 })
                 .catch(() => {
-                    dd('redirect');
                     this.redirectTimers();
                 })
                 .finally(() => {

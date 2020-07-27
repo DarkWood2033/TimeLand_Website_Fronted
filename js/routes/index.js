@@ -152,6 +152,15 @@ const router = new Router({
                         auth: true
                     }
                 },
+                {
+                    path: 'user/timers/play/:id',
+                    name: 'user.timers.play',
+                    component: () => import("./timers/plays/PlayUserTimerRouter.vue"),
+                    meta: {
+                        name: 'page.player_user_timers',
+                        auth: true
+                    }
+                },
             ]
         }
     ],

@@ -55,7 +55,7 @@
                 this.$router.push({ name: 'user.timers.edit', params: { id: item.id } });
             },
             redirectPlay(item){
-                this.$router.push({ name: 'home' });
+                this.$router.push({ name: 'user.timers.play', params: { id: item.id } });
             }
         },
         beforeCreate() {

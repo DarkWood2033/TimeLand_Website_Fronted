@@ -6,16 +6,16 @@
             :btn-text="$t('tags.button.create')"
             @finish="create($event)"
         ></v-form>
-        <v-interval-timer-view
+        <v-player-interval-timer-view
             v-else
             :iterator="iterator"
-        ></v-interval-timer-view>
+        ></v-player-interval-timer-view>
     </div>
 </template>
 
 <script>
     import IteratorItemIntervalTimer from "../../entities/IteratorItemIntervalTimer";
-    import IntervalTimerView from "../../views/timers/TabataTimerView";
+    import PlayerIntervalTimerView from "../../views/timers/PlayerIntervalTimerView";
 
     export default {
         name: "IntervalTimerRouter",
@@ -31,7 +31,7 @@
             }
         },
         components: {
-            vIntervalTimerView: IntervalTimerView
+            vPlayerIntervalTimerView: PlayerIntervalTimerView
         }
     }
 </script>

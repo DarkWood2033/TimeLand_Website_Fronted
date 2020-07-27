@@ -1,5 +1,5 @@
 <template>
-    <p class="text_white text_bold h3 text_center py-3">{{ $t('text.type.' + type) + ' - ' + time }}</p>
+    <p class="text_white text_bold h3 text_center py-3">{{ (name || $t('text.type.' + type)) + ' - ' + time }}</p>
 </template>
 
 <script>
@@ -13,6 +13,11 @@
             time: {
                 type: Number,
                 default: 0
+            },
+            name: {
+                type: String,
+                required: false,
+                default: ''
             }
         },
     }
