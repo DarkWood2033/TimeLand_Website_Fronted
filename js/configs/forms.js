@@ -6,6 +6,7 @@ import RegistrationAuthForm from "../components/forms/auth/RegistrationAuthForm"
 import ForgotPasswordForm from "../components/forms/auth/ForgotPasswordForm";
 import ResetPasswordForm from "../components/forms/auth/ResetPasswordForm";
 import ItemTimerForm from "../components/forms/timers/ItemTimerForm";
+import SendSupportForm from "../components/forms/supports/SendSupportForm";
 
 export default {
     EditTime: EditTimeForm,
@@ -15,5 +16,6 @@ export default {
     RegistrationAuth: RegistrationAuthForm,
     ForgotPassword: ForgotPasswordForm,
     ResetPassword: ResetPasswordForm,
-    ItemTimer: ItemTimerForm
+    ItemTimer: ItemTimerForm,
+    SendSupport: SendSupportForm
 };

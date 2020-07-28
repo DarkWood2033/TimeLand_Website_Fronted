@@ -24,6 +24,14 @@ const router = new Router({
                         name: 'page.home'
                     }
                 },
+                {
+                    path: '/support',
+                    name: 'support',
+                    component: () => import("./main/SupportRouter.vue"),
+                    meta: {
+                        name: 'page.contact'
+                    }
+                },
 
                 /* Tools */
                 {

@@ -69,6 +69,12 @@ export default {
             }
         }
     },
+    "support": {
+        "store": {
+            "url": "api/supports",
+            "method": "POST"
+        }
+    },
     "localization": {
         "load": {
             "url": "localization/load",
