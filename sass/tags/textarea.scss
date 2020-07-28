@@ -1,0 +1,17 @@
+@mixin textarea_default($color_type){
+    color: $color_type;
+    border: 2px solid $color_type;
+}
+
+textarea{
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    font-family: $font-family;
+
+    @each $color, $type in $types {
+        &.#{$type}{
+            @include textarea_default($color);
+        }
+    }
+}

@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div @click="closeMenu"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.about_us') }}</router-link></div>
-            <div @click="closeMenu"><router-link tag="a" :to="{ name: 'home' }">{{ $t('page.contact') }}</router-link></div>
+            <div @click="closeMenu"><router-link tag="a" :to="{ name: 'support' }">{{ $t('page.contact') }}</router-link></div>
             <div v-if="status" class="account"><a @click="sub_menu_account = !sub_menu_account">{{ $t('page.account') }} <i class="fa fa-chevron-down"></i></a>
                 <div :class="{ active: sub_menu_account }" @mouseleave="sub_menu_account = false" class="sub_menu">
                     <div @click="closeMenu"><router-link tag="a" :to="{ name: 'auth.profile' }">{{ $t('page.profile') }}</router-link></div>
