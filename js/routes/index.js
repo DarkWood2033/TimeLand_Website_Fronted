@@ -14,7 +14,7 @@ const router = new Router({
     routes: [
         {
             path: '',
-            component: () => import('./../components/layouts/MainLayout.vue'),
+            component: () => import('./../components/layouts/HomeLayout.vue'),
             children: [
                 {
                     path: '/',
@@ -24,6 +24,12 @@ const router = new Router({
                         name: 'page.home'
                     }
                 },
+            ],
+        },
+        {
+            path: '',
+            component: () => import('./../components/layouts/MainLayout.vue'),
+            children: [
                 {
                     path: '/support',
                     name: 'support',
